@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MyHeader from './components/MyHeader.vue';
+  import MyHeader from './components/MyHeader.vue';
 
 export default {
   name: 'App',
@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
+  @import '~@fortawesome/fontawesome-free/css/all.css';
   * {
     margin: 0;
     padding: 0;
