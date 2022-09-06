@@ -9,14 +9,17 @@
 
 <script>
 export default {
-    name: 'MyBodyIntro'
+    name: 'MyBodyIntro',
+    props: {
+        info: Array
+    }
 }
 </script>
 
 <style scoped lang="scss">
     .container {
         height: 30vh;
-        background-color: #737376;
+        background-color: #4d4d4d;
         display:flex;
         justify-content:center;
         
