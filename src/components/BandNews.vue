@@ -3,13 +3,13 @@
         <h2>Latest Band News</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem perferendis, aliquam similique, repellendus ut sapiente!</p>
         <div class="cardContainer">
-
+            <SingleCard v-for="(card, index) in cards" :key="index" :imageSrc="card.src" :titolo="card.titolo" :paragrafo="card.paragrafo" />
         </div>
     </div>  
 </template>
 
 <script>
-    import SingleCardVue from './SingleCard.vue'
+    import SingleCard from './SingleCard.vue'
     export default {
         name:'BandNews',
         components: {
@@ -19,7 +19,7 @@
             return {
                 cards: [
                     {
-                        src: "../assets/images/blog_music_techo-400x200.jpg",
+                        src: "(../assets/images/blog_music_techo-400x200.jpg)",
                         titolo: "Technology and music",
                         paragrafo: "Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum."
                     },
@@ -68,6 +68,12 @@
         p {
             color: white;
             text-align:center;
+        };
+
+        .cardContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 60%;
         }
     }
 </style>

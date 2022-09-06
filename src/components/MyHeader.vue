@@ -4,10 +4,10 @@
             <div class="logo">
                 <img src="../assets/images/avada-music-logo.png" alt="avadaLogo">
             </div>
-            <div class="burgerMenu">
-                <i class="fa-solid fa-bars fa-xl"></i>  
+            <div class="menu">
+                <i @click="getVisible" class="fa-solid fa-bars fa-xl"></i>
             </div>
-            <div class="myLinksContainer">
+            <div :class="visible == true ? 'show-menu' : 'hide-menu'">
                 <div class="myLinks">
                     <ul>
                         <li v-for="(link, index) in siteLinks" :key="index"><a href="#">{{link}}</a></li>
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="presentation">
+        <div :class="visible == false ? 'presentationOn' : 'presentationOff'">
             <h1>Untold Stories</h1>
             <p>There is an untold story behind every favorite song.</p>
             <div class="buttonContainer">
@@ -31,6 +31,16 @@ export default {
     name: 'MyHeader',
     props: {
         siteLinks: Array
+    },
+    data() {
+        return {
+            visible: false
+        }
+    },
+    methods: {
+        getVisible() {
+            return this.visible = true;
+        }
     }
 }
 </script>
@@ -59,18 +69,27 @@ export default {
                 }
             };
 
-            .burgerMenu {
+            .menu {
                 padding-top: 1rem;
                 padding-right: 2rem;
+                position:relative;
 
                 i {
                     color:white;
+                    position: absolute;
+                    top: 0;
+                    right: 15;
                 }
             };
 
-            .myLinksContainer {
+            .hide-menu {
                 display:none;
 
+                
+            }
+            .show-menu {
+            display:block;
+            
                 .myLinks {
                     width:100%;
                     height:100vh;
@@ -83,6 +102,14 @@ export default {
                     align-items: center;
                     background-color: #ea4a56;
 
+                    ul {
+                        list-style-type: none;
+                    };
+
+                    li {
+                        margin: 3rem
+                    };
+
                     a {
                         margin-bottom: 2rem;
                         text-decoration:none;
@@ -92,7 +119,7 @@ export default {
             }
         };
 
-        .presentation {
+        .presentationOn {
             position: absolute;
             left:50%;
             top: 50%;
@@ -135,6 +162,9 @@ export default {
                     overflow: hidden;
                 }
             }
+        };
+        .presentationOff {
+            display:none;
         }
 
         
