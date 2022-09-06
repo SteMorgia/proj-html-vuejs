@@ -1,8 +1,8 @@
 <template>
     <div class="innerContainer">
-        <h2>{{title}}</h2>
+        <h2>{{titolo}}</h2>
         <hr>
-        <p>{{paragraph}}</p>
+        <p>{{paragrafo}}</p>
     </div>
 </template>
 
@@ -10,7 +10,8 @@
 export default {
     name: 'InfoTitle',
     props: {
-        info: Array
+        titolo: String,
+        paragrafo: String
     }
 }
 </script>

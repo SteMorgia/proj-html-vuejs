@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         getImage(imagePath) {
-            return require (imagePath);
+            return require ('../assets/' + imagePath);
         }
     }
 }

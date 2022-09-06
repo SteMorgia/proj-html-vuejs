@@ -1,9 +1,14 @@
 <template>
     <div class="container">
         <div class="greyArea">
-            <InfoTitle :title="info[0].titolo" :paragraph="info[0].paragrafo" />
+            <InfoTitle :titolo="info[0].titolo" :paragrafo="info[0].paragrafo" />
         </div>
-        <BandNews />
+        <div class="bandArea">
+            <div class="titleContainer">
+                <InfoTitle :titolo="info[1].titolo" :paragrafo="info[1].paragrafo" />
+            </div>
+            <BandNews />
+        </div>
     </div>
 </template>
 
@@ -45,5 +50,20 @@
         background-color: #4d4d4d;
         display:flex;
         justify-content:center;
+    };
+    .bandArea {
+        height: 200vh;
+        background-color: #292d39;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+        .titleContainer {
+            margin-bottom: 3rem;
+            display:flex;
+            justify-content:center;
+            width:100%;
+        }
     }
 </style>
