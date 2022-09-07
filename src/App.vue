@@ -2,18 +2,21 @@
   <div id="app">
     <MyHeader :siteLinks="siteLinks" />
     <MyBody />
+    <MyFooter :siteLinks="siteLinks"/>
   </div>
 </template>
 
 <script>
   import MyHeader from './components/MyHeader.vue';
   import MyBody from './components/MyBody.vue';
+  import MyFooter from './components/MyFooter.vue'
 
 export default {
   name: 'App',
   components: {
     MyHeader,
-    MyBody
+    MyBody,
+    MyFooter
   },
   data() {
     return {
