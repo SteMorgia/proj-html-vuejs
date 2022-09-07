@@ -14,6 +14,14 @@
             </div>
         </div>
         <PinkComponent :paragrafo="pink[0]" />
+        <MyPlayer />
+        <div class="datesArea">
+            <InfoTitle :titolo="info[2].titolo" :paragrafo="info[2].paragrafo" />
+            <div class="datesPlaces">
+                <MyDates :dates="dates"/>
+            </div>
+        </div>
+        <PinkComponent :paragrafo="pink[1]" />
     </div>
 </template>
 
@@ -21,6 +29,8 @@
     import InfoTitle from './InfoTitle.vue';
     import BandNews from './BandNews.vue';
     import PinkComponent from './PinkComponent.vue';
+    import MyPlayer from './MyPlayer.vue';
+    import MyDates from './MyDates.vue'
 
 
     export default {
@@ -28,8 +38,11 @@
     components: {
     BandNews,
     InfoTitle,
-    PinkComponent
-    },
+    PinkComponent,
+    MyPlayer,
+    MyDates,
+    
+},
         data() {
             return {
                 info: [
@@ -47,7 +60,9 @@
                     }
                 ],
 
-                pink: ['VIEW ALL LATEST NEWS', 'VIEW ALL LIVE DATES']
+                pink: ['VIEW ALL LATEST NEWS', 'VIEW ALL LIVE DATES'],
+
+                dates: ['17/08/2022 GEM FESTIVAL 2022 ANAKALIA, GEORGIA', '24/9/2022 GROOVEFEST DOMINICAL REPUBLIC', '31/10/2022 OASIS FESTIVAL 2022 MARRAKECH, MOROCCO', '07/11/2022 MOGA FESTIVAL - ESSAOURIA, MOROCCO', '10/12/2022 ENVISION FESTIVAL - UVITA, COSTA RICA']
             }
         }
     }
@@ -80,5 +95,17 @@
         background-color: #292d39;
         display: flex;
         justify-content: center;
+    };
+    .datesArea {
+        max-height: 200vh;
+        background-color: #292d39;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+
+        .datesPlaces {
+            margin: 2rem;
+            
+        }
     }
 </style>
