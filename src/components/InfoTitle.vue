@@ -1,5 +1,5 @@
 <template>
-    <div class="innerContainer">
+    <div class="titleContainer">
         <h2>{{titolo}}</h2>
         <hr>
         <p>{{paragrafo}}</p>
@@ -18,7 +18,7 @@ export default {
 
 <style scoped lang="scss">
         
-    .innerContainer {
+    .titleContainer {
         text-align: center;
         width: 50%;
         display:flex;
@@ -33,6 +33,7 @@ export default {
         hr {
             width:50%;
             text-align: center;
+            color: white;
         }
         p {
             color: white;
