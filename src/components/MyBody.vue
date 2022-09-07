@@ -91,10 +91,11 @@
         }
     };
     .bandAreaCards {
-        height: 170vh;
+        max-height: 170vh;
         background-color: #292d39;
         display: flex;
         justify-content: center;
+        padding-bottom: 3rem;
     };
     .datesArea {
         max-height: 200vh;
