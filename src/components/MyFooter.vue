@@ -46,6 +46,7 @@ export default {
                     a {
                         color: white;
                         text-decoration: none;
+                        font-size: 13px;
                     }
                 }
             }

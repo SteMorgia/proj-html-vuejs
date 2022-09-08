@@ -9,6 +9,9 @@
             </div>
             <div :class="visible == true ? 'show-menu' : 'hide-menu'">
                 <div class="myLinks">
+                    <div class="crossContainer">
+                        <i @click="hideLinks" class="fa-solid fa-xmark fa-xl"></i>
+                    </div>
                     <ul>
                         <li v-for="(link, index) in siteLinks" :key="index"><a href="#">{{link}}</a></li>
                     </ul>
@@ -40,6 +43,9 @@ export default {
     methods: {
         getVisible() {
             return this.visible = true;
+        },
+        hideLinks() {
+            return this.visible = false;
         }
     }
 }
@@ -102,6 +108,16 @@ export default {
                     align-items: center;
                     background-color: #ea4a56;
 
+                    .crossContainer {
+                        position: absolute;
+                        top:7px;
+                        right:7px;
+
+                        .fa-xmark {
+                            color: white;
+                        }
+                    }
+
                     ul {
                         list-style-type: none;
                     };
@@ -160,6 +176,11 @@ export default {
                     border: 1px solid white;
                     cursor:pointer;
                     overflow: hidden;
+
+                    &:hover {
+                        background-color: white;
+                        color: black;
+                    }
                 }
             }
         };
